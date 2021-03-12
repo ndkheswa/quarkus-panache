@@ -21,8 +21,14 @@ class SmsController {
     @Transactional
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{Id}")
+<<<<<<< HEAD
     fun getMessage(@PathParam("Id") Id: UUID): SmsMessage? {
         return if (messageService != null) messageService?.getMessage(Id) else null
+=======
+    fun getMessage(@PathParam("Id") Id: UUID): SmsMessage {
+        var message = messageService?.getMessage(Id)
+        return message!!
+>>>>>>> 9b5d2818824bf9b3a263592b08d9077183c5f183
     }
 
 
