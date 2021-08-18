@@ -13,6 +13,8 @@ class MessageService {
     var messageRepository: MessageRepository? = null
 
     fun getMessage(Id: UUID): SmsMessage? {
+
         return if (messageRepository != null) messageRepository?.findById(Id) else null
+
     }
 }
